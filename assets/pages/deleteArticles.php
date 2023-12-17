@@ -9,7 +9,7 @@
        $result = $test->delete("articles","ID_Articles",$_GET["id"]);
        if($result)
        {
-            header("location: ../../index.php");
+            header("location: articles.php");
        }
 
     }

@@ -16,7 +16,7 @@ if($_SERVER['REQUEST_METHOD'] == "GET") {
    $content = $_POST['content'];
    $test->update("articles", ['title', 'contenu'], [$title, $content], "ID_Articles = $id");
 
-   header("location: ../../index.php");
+   header("location: articles.php");
 }
 ?>
 

@@ -1,6 +1,6 @@
 
 <?php
-  include "assets/config/database.php";
+  include "../config/database.php";
 
   $result = $test->show("articles",array("ID_Articles","title","contenu","date_de_creation","image"));
 
@@ -14,7 +14,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
-    <?php include "assets/pages/header.php"?>
+    <?php include "header.php"?>
     <div>
         <div class="image">
             <img class="img-fluid" src="assets/img/hero1.jpg" alt="">
@@ -23,7 +23,7 @@
     <div class="container">
         <div class="title my-5 d-flex justify-content-between">
             <h3 class="articles">Articles</h3>
-            <a href="assets/pages/addArticle.php" class="btn btn-primary">Add Article</a>    
+            <a href="addArticle.php" class="btn btn-primary">Add Article</a>    
         </div>
     <div class="row row-cols-1 row-cols-md-3 g-4">
       <?php  
@@ -32,7 +32,7 @@
         echo "
         <div class='col'>
           <div class='card h-100'>
-            <img src='assets/pages/images/$row[image]' class='card-img-top' alt='...'>
+            <img src='images/$row[image]' class='card-img-top' alt='...'>
             <div class='card-body'>
               <h5 class='card-title'>$row[title]</h5>
               <p class='card-text'>$row[contenu]</p>
@@ -40,8 +40,8 @@
             <div class='card-footer d-flex justify-content-between align-items-center'>
               <small class='text-body-secondary'>$row[date_de_creation]</small>
               <div>
-                <a href='assets/pages/updateArticle.php?id=$row[ID_Articles]' class='btn btn-primary'>Update</a>
-                <a href='assets/pages/deleteArticles.php?id=$row[ID_Articles]' class='btn btn-success'>Delete</a>
+                <a href='updateArticle.php?id=$row[ID_Articles]' class='btn btn-primary'>Update</a>
+                <a href='deleteArticles.php?id=$row[ID_Articles]' class='btn btn-success'>Delete</a>
               </div>
             </div>
           </div>
