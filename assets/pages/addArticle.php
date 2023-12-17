@@ -22,7 +22,7 @@ if(isset($_POST['submit'])) {
                             array($title, $content, $currentDate, "1", $filename)); 
 
     if($result) {  
-        header("location: ../../index.php");
+        header("location: articles.php");
     } else {
         echo "Failed to insert into the database.";
     }
